@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Foundation Projects — Gaia A. Bertolino</title>
+  <link rel="icon" type="image/svg+xml" href="assets/img/brain.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-light:#ffffff; --text-light:#14151a; --muted-light:#616678; --card-light:#f7f8fa; --border-light:#e6e7ee;
+      --bg-dark:#0f1115; --text-dark:#e7e8ec; --muted-dark:#a6a9b4; --card-dark:#161922; --border-dark:#242838;
+      --link:#0b6fa4; --link-hover:#084f76; --radius:14px; --maxw:980px; --shadow:0 10px 24px rgba(0,0,0,.08);
+    }
+    [data-theme="light"]{--bg:var(--bg-light);--text:var(--text-light);--muted:var(--muted-light);--card:var(--card-light);--border:var(--border-light)}
+    [data-theme="dark"]{--bg:var(--bg-dark);--text:var(--text-dark);--muted:var(--muted-dark);--card:var(--card-dark);--border:var(--border-dark)}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,-apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial;transition:background .3s,color .3s}
+    a{color:var(--link);text-decoration:none}
+    a:hover{color:var(--link-hover);text-decoration:underline}
+    .topbar{position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:saturate(180%) blur(10px);background:color-mix(in oklab,var(--bg) 85%,transparent);border-bottom:1px solid var(--border)}
+    .topbar .inner{max-width:var(--maxw);margin:0 auto;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{font-weight:600;letter-spacing:.01em;color:var(--text)}
+    .topnav{display:flex;gap:14px;flex-wrap:wrap}
+    .topnav a.active{font-weight:600;text-decoration:underline}
+    .theme-toggle{border:none;background:transparent;font-size:1.3rem;cursor:pointer;color:var(--text);transition:transform .2s}
+    .theme-toggle:hover{transform:scale(1.1)}
+    main{max-width:var(--maxw);margin:0 auto;padding:100px 20px 30px}
+    section{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+    h1{font-family:Merriweather,Georgia,serif;font-size:1.7rem;margin:0 0 6px}
+    .muted{color:var(--muted);margin:0 0 18px}
+    .list{display:grid;gap:12px}
+    .item{padding:14px;border:1px solid var(--border);border-radius:12px;background:color-mix(in oklab,var(--card) 92%,var(--bg))}
+    @media(max-width:700px){main{padding:86px 14px 20px}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="inner">
+      <a class="brand" href="index.html">Gaia A. Bertolino</a>
+      <nav class="topnav">
+        <a href="index.html">Home</a>
+        <a class="active" href="projects.html">Foundation Projects</a>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" title="Toggle theme">☾</button>
+    </div>
+  </header>
+
+  <main>
+    <section aria-labelledby="projects-title">
+      <h1 id="projects-title">Foundation Projects</h1>
+      <p class="muted">Selected projects from my BSc/MSc training.</p>
+      <div class="list">
+        <div class="item"><a href="https://github.com/gaiabertolino/logistic-planning-emergency">AI agent-based Logistics Optimization for Emergency Services</a></div>
+        <div class="item"><a href="https://github.com/gaiabertolino/maskrcnn-powercables-segmentation">Power Cable and Tower Detection using Mask R-CNN</a></div>
+        <div class="item"><a href="https://github.com/gaiabertolino/ColBERT-RAG-Indexing">Improving Information Retrieval with ColBERT Indexing</a></div>
+        <div class="item"><a href="https://github.com/gaiabertolino/dynamic-GCNN-for-link-prediction">Dynamic GCNN for Link Prediction in Twitter Data</a></div>
+        <div class="item"><a href="https://github.com/gaiabertolino/how-tipping-affects-GPTomni">Short study on the Impact of "Tipping" for Optimized Prompts on GPT-omni</a></div>
+        <div class="item"><a href="https://github.com/gaiabertolino/industrial-robotics">Industrial Robotics: Kinematics and Trajectory Planning</a></div>
+        <div class="item"><a href="https://github.com/gaiabertolino/mobile-robotics">Mobile Robotics: Path Planning and Trajectory Control</a></div>
+        <div class="item"><a href="https://github.com/gaiabertolino/docker-frequent-itemset-platform">Frequent Itemset Mining with Containerized Web Interface (Docker)</a></div>
+        <div class="item"><a href="https://github.com/gaiabertolino/bank-fraud-detection">Bank Fraud Detection using Anomaly Detection Techniques</a></div>
+        <div class="item"><a href="https://github.com/gaiabertolino/streamlit-flight-insights">Big Data Analytics on Air Flights</a></div>
+        <div class="item"><a href="https://github.com/gaiabertolino/control-system-modeling">Fundamentals of Automatic Control: System Analysis and Control Design</a></div>
+        <div class="item"><a href="https://github.com/gaiabertolino/vhdl-carry-select">16-bit Carry-Select Adder Design and Verification in VHDL</a></div>
+        <div class="item"><a href="https://github.com/gaiabertolino/appunti/blob/e0571c682f588b6147e38bc18288747763bd2c2c/Relazione%20progetto%20pipeline.pdf">Pipelined Adder-Subtractor in VHDL</a></div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const root=document.documentElement;
+    const themeBtn=document.getElementById('themeToggle');
+    const saved=localStorage.getItem('theme');
+    if(saved){root.setAttribute('data-theme',saved);themeBtn.textContent=saved==='dark'?'☾':'☼';}
+    themeBtn.addEventListener('click',()=>{const current=root.getAttribute('data-theme');const next=current==='dark'?'light':'dark';root.setAttribute('data-theme',next);themeBtn.textContent=next==='dark'?'☾':'☼';localStorage.setItem('theme',next);});
+  </script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Research — Gaia A. Bertolino</title>
+  <link rel="icon" type="image/svg+xml" href="assets/img/brain.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-light:#ffffff;--text-light:#14151a;--muted-light:#616678;--card-light:#f7f8fa;--border-light:#e6e7ee;
+      --bg-dark:#0f1115;--text-dark:#e7e8ec;--muted-dark:#a6a9b4;--card-dark:#161922;--border-dark:#242838;
+      --link:#0b6fa4;--link-hover:#084f76;--radius:14px;--maxw:1180px;--shadow:0 10px 24px rgba(0,0,0,.08)
+    }
+    [data-theme="light"]{--bg:var(--bg-light);--text:var(--text-light);--muted:var(--muted-light);--card:var(--card-light);--border:var(--border-light)}
+    [data-theme="dark"]{--bg:var(--bg-dark);--text:var(--text-dark);--muted:var(--muted-dark);--card:var(--card-dark);--border:var(--border-dark)}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,-apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial;font-size:16.5px;line-height:1.62;transition:background .3s,color .3s}
+    a{color:var(--link);text-decoration:none}
+    a:hover{color:var(--link-hover);text-decoration:underline}
+    .topbar{position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:saturate(180%) blur(10px);background:color-mix(in oklab,var(--bg) 85%,transparent);border-bottom:1px solid var(--border)}
+    .topbar .inner{max-width:var(--maxw);margin:0 auto;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{font-weight:600;letter-spacing:.01em;color:var(--text)}
+    .topnav{display:flex;gap:14px;flex-wrap:wrap}
+    .topnav a{font-size:1rem}
+    .topnav a.active{font-weight:600;text-decoration:underline}
+    .menu-toggle{display:none;border:1px solid var(--border);background:var(--card);color:var(--text);border-radius:999px;padding:8px 12px;font-size:1rem;cursor:pointer}
+    .theme-toggle{border:0;background:transparent;color:var(--text);font-size:1.3rem;cursor:pointer}
+    .page{width:100%;max-width:var(--maxw);margin:78px auto 0;padding:32px 20px}
+    .content-shell{background:color-mix(in oklab,var(--card) 92%,var(--bg));border:1px solid var(--border);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+    .page-heading{margin-bottom:24px}
+    h1,h2,h3{font-family:Merriweather,Georgia,serif}
+    h1{font-size:2rem;line-height:1.2;margin:0 0 8px}
+    h2{font-size:1.5rem;margin:0 0 12px}
+    h3{font-size:1.15rem;margin:0 0 8px}
+    .muted{color:var(--muted)}
+    .research-list{display:grid;gap:18px;width:100%}
+    .research-card{display:grid;grid-template-columns:minmax(200px,32%) minmax(0,1fr);column-gap:22px;align-items:start;padding:22px;border:1px solid var(--border);border-radius:var(--radius);background:var(--card);box-shadow:var(--shadow)}
+    .research-card > :not(.research-image){grid-column:2}
+    .research-card.no-image{grid-template-columns:1fr}
+    .research-card.no-image > :not(.research-image){grid-column:1}
+    .research-image{grid-column:1;grid-row:1 / span 3;align-self:stretch;width:100%;height:100%;min-height:0;object-fit:contain;background:#ffffff;border-radius:10px;border:1px solid var(--border)}
+    .research-card p:last-child{margin-bottom:0}
+    footer{text-align:center;margin:32px 0}
+    @media(max-width:860px){
+      .menu-toggle{display:inline-flex}
+      .topnav{display:none;position:absolute;left:0;right:0;top:54px;padding:12px 20px;background:color-mix(in oklab,var(--bg) 92%,transparent);border-bottom:1px solid var(--border)}
+      .topnav.open{display:flex}
+    }
+    @media(max-width:600px){.page{padding:20px 14px;margin-top:70px}.content-shell,.research-card{padding:16px}.research-card{grid-template-columns:1fr}.research-card > :not(.research-image){grid-column:1}.research-image{grid-column:1;grid-row:auto;height:auto;aspect-ratio:1 / 1;margin-bottom:18px}body{font-size:16px}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="inner">
+      <a class="brand" href="index.html">Gaia A. Bertolino</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open or close the menu">☰</button>
+      <nav class="topnav" id="topmenu">
+        <a href="index.html#about">About</a>
+        <a href="index.html#news">News</a>
+        <a class="active" href="research.html" aria-current="page">Research</a>
+        <a href="index.html#education">Education</a>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" title="Change theme" aria-label="Change theme">☾</button>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="content-shell">
+      <header class="page-heading">
+        <h1>Research</h1>
+        <p class="muted">My work focuses on trustworthy, adaptive, and resource-efficient machine learning for multimodal health monitoring.</p>
+      </header>
+      <div class="research-list">
+
+      <article class="research-card">
+          <img class="research-image" src="assets/img/MobiUK.png" alt="Respiratory audio question answering under mobile sensing heterogeneity" onerror="this.hidden=true" />
+          <h2>Respiratory Audio Question Answering for Health Assessment Under Real-World Mobile Sensing Heterogeneity</h2>
+          <p class="muted"><em>Robust respiratory audio QA under real-world sensing variability</em> · MobiUK 2026 · <a href="https://www.mobiuk.org/2026/abstracts/LT1_Respiratory_Audio_Question.pdf">abstract</a></p>
+          <p>Investigated respiratory audio question answering for health assessment under the heterogeneity introduced by real-world mobile sensing conditions, with a focus on developing robust systems across diverse recording environments and devices.</p>
+        </article>
+    
+        <article class="research-card">
+          <img class="research-image" src="assets/img/evoicenet.png" alt="Benchmarking heterogeneous audio biomarkers for respiratory health question answering" onerror="this.hidden=true" />
+          <h2>Benchmarking Heterogeneous Audio Biomarkers for Respiratory Health Question Answering</h2>
+          <p class="muted"><em>Evaluation of heterogeneous respiratory audio biomarkers</em> · IVBC 2026 · <a href="https://drive.google.com/file/d/12a_Wd96yvwHR_pGtq1-E4ip26UDkp8xV/view?usp=share_link">abstract</a></p>
+          <p>Benchmarked heterogeneous audio biomarkers for respiratory health question answering, examining how complementary respiratory sounds can support reliable and generalizable health assessment.</p>
+        </article>
+
+        <article class="research-card">
+          <img class="research-image" src="assets/img/ramoeaqa.png" alt="RAMoEA-QA research overview" onerror="this.hidden=true" />
+          <h2>RAMoEA-QA: Hierarchical Specialization for Robust Respiratory Audio Question Answering</h2>
+          <p class="muted"><em>Hierarchically routed multimodal QA model</em> · <a href="https://arxiv.org/abs/2603.06542">arXiv</a></p>
+          <p>Proposed <strong>RAMoEA-QA</strong>, a two-stage specialized generative system for respiratory audio QA: an <strong>Audio Mixture-of-Experts</strong> routes each recording to the most suitable pre-trained audio encoder, while a <strong>Language Mixture-of-Adapters</strong> selects a LoRA adapter on a shared frozen LLM to match query intent and answer format, improving robustness under domain, modality, and task shifts.</p>
+        </article>
+ 
+        <article class="research-card">
+          <img class="research-image" src="assets/img/raqa.png" alt="RA-QA research overview" onerror="this.hidden=true" />
+          <h2>RA-QA: Towards Respiratory Audio-based Health Question Answering</h2>
+          <p class="muted"><em>Respiratory audio question answering benchmark</em> · <a href="https://arxiv.org/abs/2602.18452">arXiv</a></p>
+          <p>Curated and harmonized <strong>11</strong> respiratory audio corpora to build <strong>RA-QA</strong>, the first respiratory audio question-answering dataset—about <strong>9M</strong> QA pairs across <strong>60+</strong> attributes and three formats (verification, multiple-choice, open-ended)—and introduced a benchmark comparing audio-text generative models against traditional audio classifiers.</p>
+        </article>
+    </div>
+  </main>
+
+  <footer><p class="muted">© <span id="year"></span> Gaia A. Bertolino</p></footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const root = document.documentElement;
+    const themeBtn = document.getElementById('themeToggle');
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      root.setAttribute('data-theme', savedTheme);
+      themeBtn.textContent = savedTheme === 'dark' ? '☾' : '☼';
+    }
+    themeBtn.addEventListener('click', () => {
+      const nextTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', nextTheme);
+      themeBtn.textContent = nextTheme === 'dark' ? '☾' : '☼';
+      localStorage.setItem('theme', nextTheme);
+    });
+    const menuToggle = document.getElementById('menuToggle');
+    const topmenu = document.getElementById('topmenu');
+    menuToggle.addEventListener('click', () => topmenu.classList.toggle('open'));
+  </script>
+</body>
+</html>
