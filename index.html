@@ -176,6 +176,35 @@
     }
 
     html{scroll-behavior:smooth}
+
+        /* 完全从research.html复制的研究卡片样式，不要修改 */
+    .research-list{display:grid;gap:18px;width:100%}
+    .research-card{display:grid;grid-template-columns:minmax(200px,32%) minmax(0,1fr);column-gap:22px;align-items:start;padding:22px;border:1px solid var(--border);border-radius:var(--radius);background:var(--card);box-shadow:var(--shadow)}
+    .research-card > :not(.research-image){grid-column:2}
+    .research-card.no-image{grid-template-columns:1fr}
+    .research-card.no-image > :not(.research-image){grid-column:1}
+    .research-image{
+      grid-column:1;
+      grid-row:1 / span 3;
+      align-self: start;
+      width:100%;
+      min-height:0;
+      object-fit:contain;
+      background:#ffffff;
+      border-radius:10px;
+      border:1px solid var(--border);
+    }
+    .research-card p:last-child{margin-bottom:0}
+    @media(max-width:600px){
+      .research-card{grid-template-columns:1fr}
+      .research-card > :not(.research-image){grid-column:1}
+      .research-image{
+        grid-column:1;
+        grid-row:auto;
+        height:auto;
+        margin-bottom:18px
+      }
+    }
   </style>
 </head>
 <body id="top">
@@ -370,38 +399,23 @@
 
 
 
-
-        <section class="research-section">
-          <h2>Research</h2>
-          <p class="research-desc">My research focuses on developing efficient CV/ML algorithms for multimodal AI and Multidomain Imaging applications.</p>
-        
-          <!-- 论文卡片1 -->
-          <div class="paper-card">
-            <div class="paper-thumbnail">
-              <!-- 这里放你的流程图图片，会限制在左侧小框内，不会放大占满屏幕 -->
-              <img src="your-diagram.png" alt="Respiratory Audio QA framework">
-            </div>
-            <div class="paper-content">
+        <!-- index.html 里面的研究区块，完全复用research.html组件 -->
+        <section>
+          <h2>Selected Research</h2>
+          <div class="research-list">
+            <article class="research-card">
+              <img class="research-image" src="assets/img/MobiUK.png" alt="Respiratory audio question answering under mobile sensing heterogeneity" onerror="this.hidden=true" />
               <h3>Respiratory Audio Question Answering for Health Assessment Under Real‑World Mobile Sensing Heterogeneity</h3>
-              <div class="paper-meta">
-                Robust respiratory audio QA under real‑world sensing variability · MobiUK 2026 · <a href="#">abstract</a>
-              </div>
+              <p class="muted"><em>Robust respiratory audio QA under real‑world sensing variability</em> · MobiUK 2026 · <a href="https://www.mobiuk.org/2026/abstracts/LT1_Respiratory_Audio_Question.pdf">abstract</a></p>
               <p>Investigated respiratory audio question answering for health assessment under the heterogeneity introduced by real‑world mobile sensing conditions, with a focus on developing robust systems across diverse recording environments and devices.</p>
-            </div>
-          </div>
+            </article>
         
-          <!-- 论文卡片2 -->
-          <div class="paper-card">
-            <div class="paper-thumbnail">
-              <img src="your-waveform.png" alt="Audio biomarkers waveforms">
-            </div>
-            <div class="paper-content">
+            <article class="research-card">
+              <img class="research-image" src="assets/img/evoicenet.png" alt="Benchmarking heterogeneous audio biomarkers for respiratory health question answering" onerror="this.hidden=true" />
               <h3>Benchmarking Heterogeneous Audio Biomarkers for Respiratory Health Question Answering</h3>
-              <div class="paper-meta">
-                Evaluation of heterogeneous respiratory audio biomarkers · IVBC 2026 · <a href="#">abstract</a>
-              </div>
-              <p>Benchmarked heterogeneous audio biomarkers for respiratory health question</p>
-            </div>
+              <p class="muted"><em>Evaluation of heterogeneous respiratory audio biomarkers</em> · IVBC 2026 · <a href="https://drive.google.com/file/d/12a_Wd96yvwHR_pGtq1‑E4ip26UDkp8xV/view?usp=share_link">abstract</a></p>
+              <p>Benchmarked heterogeneous audio biomarkers for respiratory health question answering, examining how complementary respiratory sounds can support reliable and generalizable health assessment.</p>
+            </article>
           </div>
         </section>
 
