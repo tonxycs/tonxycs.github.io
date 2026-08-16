@@ -184,6 +184,23 @@
     .research-card > :not(.research-image){grid-column:2}
     .research-card.no-image{grid-template-columns:1fr}
     .research-card.no-image > :not(.research-image){grid-column:1}
+    .research-buttons {
+      margin-top:12px;
+    }
+    .btn-link {
+      display: inline‑block;
+      border: 2px solid #2b78d4;
+      color:#2b78d4;
+      text‑decoration:none;
+      padding:5px 14px;
+      border‑radius:4px;
+      margin‑right:10px;
+      font‑size:1.1rem;
+    }
+    .btn-link:hover {
+      background‑color:#2b78d4;
+      color:#fff;
+    }
     .research-image{
       grid-column:1;
       grid-row:1 / span 3;
@@ -404,29 +421,33 @@
         <section id="research">
           <h2>Selected Research</h2>
           <div class="research-list">
+            
             <article class="research-card">
-              <img class="research-image" src="assets/img/SemDINO.png" alt="Respiratory audio question answering under mobile sensing heterogeneity" onerror="this.hidden=true" />
+              <img class="research-image" src="assets/img/SemDINO.png" alt="SemDINO model overview" />
               <h3>SemDINO: Foundation Prior‑Guided Cross‑Temporal Semantic Alignment Network</h3>
-              <p class="muted"><em>The <strong>First</strong> Implementation of DINO architecture for SCD Task</em> · Arxiv 2026 · <a href="https://arxiv.org/pdf/2606.09772">abstract</a></p>
-              <p>Leveraging foundation models such as <strong>DINOv3</strong> to advance BCD and SCD tasks, this robust architecture delivers <strong>multi‑task capabilities, high accuracy, and strong robustness</strong>. Its plug‑and‑play design supports large‑scale missions in earth sciences and aerospace.</p>
+              <p class="authors"><em><strong>Xinyu Tong</strong>, Meihua Zhou, Jinxiao Sun, Zaiyan Zhang, Hongruixuan Chen, Lei Wang.</em></p>
+              <p class="venue">arXiv Preprint.</p>
+              <div class="research-buttons">
+                <a class="btn-link" href="https://arxiv.org/pdf/2606.09772">arxiv</a>
+              </div>
             </article>
         
             <article class="research-card">
-              <img class="research-image" src="assets/img/CLoE.png" alt="Benchmarking heterogeneous audio biomarkers for respiratory health question answering" onerror="this.hidden=true" />
+              <img class="research-image" src="assets/img/CLoE.png" alt="" />
               <h3>CLoE: Expert Consistency Learning for Robust Missing Modality Segmentation</h3>
               <p class="muted"><em>A Robust Method for Addressing Missing Modalities</em> · Arxiv 2026 · <a href="https://arxiv.org/abs/2603.09316">abstract</a></p>
               <p>The essence of the modality‑deficient problem is to ensure high accuracy even under adverse data conditions. We propose Expert Consistency Learning (CLoE), a consistency‑driven framework for modality‑deficient segmentation. CLoE incorporates robustness as an expert consistency constraint at the decision level and introduces a dual‑branch expert consistency learning objective. It achieves high‑accuracy performance across various types of datasets.</p>
             </article>
 
             <article class="research-card">
-              <img class="research-image" src="assets/img/M4Fuse2.png" alt="Benchmarking heterogeneous audio biomarkers for respiratory health question answering" onerror="this.hidden=true" />
+              <img class="research-image" src="assets/img/M4Fuse2.png" alt="" />
               <h3>M4Fuse: Lightweight State‑Space MoE with a Cross‑Scale Gating Bridge for Brain Tumor Segmentation</h3>
               <p class="muted"><em>The <strong>most lightweight</strong> Brain Tumor Segmentation Framework</em> · CVPR 2026 · <a href="https://arxiv.org/abs/2605.02444">abstract</a></p>
               <p>This work investigates key challenges for state‑of‑the‑art small‑size models. It provides insights for resource‑constrained, few‑sample medical image segmentation and proposes highly efficient solutions.</p>
             </article>
 
             <article class="research-card">
-              <img class="research-image" src="assets/img/DCL.png" alt="Benchmarking heterogeneous audio biomarkers for respiratory health question answering" onerror="this.hidden=true" />
+              <img class="research-image" src="assets/img/DCL.png" alt="" />
               <h3>DCL‑SE: Dynamic Curriculum Learning for Spatiotemporal Encoding of Brain Imaging</h3>
               <p class="muted"><em>An end‑to‑end framework centered on Data‑Driven Spatiotemporal Encoding</em> · Neural Network 2026 · <a href="https://www.sciencedirect.com/science/article/pii/S0893608026008671">abstract</a></p>
               <p>High‑dimensional neuroimaging analysis for clinical diagnosis often suffers from trade‑offs between spatiotemporal fidelity and poor adaptability of large general‑purpose models. We introduce an end‑to‑end framework for data‑driven spatiotemporal encoding to mitigate this issue.</p>
