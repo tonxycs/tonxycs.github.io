@@ -184,22 +184,48 @@
     .research-card > :not(.research-image){grid-column:2}
     .research-card.no-image{grid-template-columns:1fr}
     .research-card.no-image > :not(.research-image){grid-column:1}
+/* ---------- Research Card 紧凑排版 + 棕色椭圆按钮 ---------- */
+
+    .research-card h3 {
+      margin: 0 0 6px 0;
+      font-size: 1.25rem;
+      line-height: 1.45;
+    }
+    
+    .research-card .authors {
+      margin: 0 0 4px 0;
+      font-size: 0.95rem;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+    
+    .research-card .venue {
+      margin: 0 0 10px 0;
+      font-size: 0.95rem;
+      font-style: italic;
+      color: var(--muted);
+    }
+    
     .research-buttons {
-      margin-top:12px;
+      margin-top: 8px;
     }
+    
     .btn-link {
-      display: inline‑block;
-      border: 2px solid #2b78d4;
-      color:#2b78d4;
-      text‑decoration:none;
-      padding:5px 14px;
-      border‑radius:4px;
-      margin‑right:10px;
-      font‑size:1.1rem;
+      display: inline-block;
+      border: 2px solid #8b4513;
+      color: #8b4513;
+      text-decoration: none;
+      padding: 5px 14px;
+      border-radius: 999px;
+      margin-right: 10px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      line-height: 1.4;
     }
+    
     .btn-link:hover {
-      background‑color:#2b78d4;
-      color:#fff;
+      background-color: #8b4513;
+      color: #ffffff;
     }
     .research-image{
       grid-column:1;
@@ -424,13 +450,13 @@
             
             <article class="research-card">
               <img class="research-image" src="assets/img/SemDINO.png" alt="SemDINO model overview" />
-              <h3>SemDINO: Foundation Prior‑Guided Cross‑Temporal Semantic Alignment Network</h3>
-              <p class="authors"><em><strong>Xinyu Tong</strong>, Meihua Zhou, Jinxiao Sun, Zaiyan Zhang, Hongruixuan Chen, Lei Wang.</em></p>
-              <p class="venue">arXiv Preprint.</p>
-              <div class="research-buttons">
-                <a class="btn-link" href="https://arxiv.org/pdf/2606.09772">arxiv</a>
-              </div>
-            </article>
+                <h3>SemDINO: Foundation Prior‑Guided Cross‑Temporal Semantic Alignment Network</h3>
+                <p class="authors"><em><strong>Xinyu Tong</strong>, Meihua Zhou, Jinxiao Sun, Zaiyan Zhang, Hongruixuan Chen, Lei Wang</em></p>
+                <p class="venue">arXiv Preprint.</p>
+                <div class="research-buttons">
+                  <a class="btn-link" href="https://arxiv.org/pdf/2606.09772">arxiv</a>
+                </div>
+              </article>
         
             <article class="research-card">
               <img class="research-image" src="assets/img/CLoE.png" alt="" />
