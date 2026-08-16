@@ -179,33 +179,32 @@
     html{scroll-behavior:smooth}
 
     .research-list{display:grid;gap:18px;width:100%}
-    .research-card{display:grid;grid-template-columns:minmax(200px,32%) minmax(0,1fr);column-gap:22px;align-items:start;padding:22px;border:1px solid var(--border);border-radius:var(--radius);background:var(--card);box-shadow:var(--shadow)}
-    .research-card > :not(.research-image){grid-column:2}
+    /* align-items:center：让第1列(image-wrap)整体，和第2列全部文字块垂直居中 */
+    .research-card{display:grid;grid-template-columns:minmax(200px,32%) minmax(0,1fr);column-gap:22px;align-items:center;padding:22px;border:1px solid var(--border);border-radius:var(--radius);background:var(--card);box-shadow:var(--shadow)}
+    .research-card > :not(.image-wrap){grid-column:2}
     .research-card.no-image{grid-template-columns:1fr}
-    .research-card.no-image > :not(.research-image){grid-column:1}
+    .research-card.no-image > *{grid-column:1}
     
+    /* 文本间距压到最小，只保留行之间必要距离，杜绝大空白 */
     .research-card h3 {
-      margin: 0 0 6px 0;
-      font-size: 1.18rem;
-      line-height: 1.45;
-    }
-    
-    .research-card .authors {
       margin: 0 0 4px 0;
+      font-size: 1.18rem;
+      line-height: 1.35;
+    }
+    .research-card .authors {
+      margin: 0 0 3px 0;
       font-size: 0.95rem;
-      line-height: 1.55;
+      line-height: 1.4;
       color: var(--muted);
     }
-    
     .research-card .venue {
-      margin: 0;
+      margin: 0 0 6px 0;
       font-size: 0.95rem;
       font-style: italic;
       color: var(--muted);
     }
-    
     .research-buttons {
-      margin-top: 8px;
+      margin-top: 0;
     }
     
     .btn-link {
@@ -220,30 +219,36 @@
       font-weight: 400;
       line-height: 1.4;
     }
-    
     .btn-link:hover {
       background-color: #8b4513;
       color: #ffffff;
     }
-    .research-image{
+    
+    /* image-wrap是网格第一列元素；靠外层research-card的align-items:center实现图片块整体上下居中 */
+    .image-wrap {
       grid-column:1;
-      align-self: center;
       width:100%;
-      min-height:0;
+    }
+    .image-wrap img {
+      width:100%;
+      height:auto;
       object-fit:contain;
-      background:#ffffff;
       border-radius:10px;
       border:1px solid var(--border);
+      background:#ffffff;
     }
+    
     .research-card p:last-child{margin-bottom:0}
+    
     @media(max-width:600px){
       .research-card{grid-template-columns:1fr}
-      .research-card > :not(.research-image){grid-column:1}
-      .research-image{
-        grid-column:1;
-        grid-row:auto;
+      .research-card > *{grid-column:1}
+      .image-wrap{
+        margin-bottom:14px;
+      }
+      .image-wrap img{
+        width:100%;
         height:auto;
-        margin-bottom:18px
       }
     }
   </style>
@@ -446,7 +451,7 @@
           <div class="research-list">
             
             <article class="research-card">
-              <img class="research-image" src="assets/img/SemDINO.png" alt="SemDINO model overview" />
+              <img class="image-wrap" src="assets/img/SemDINO.png" alt="SemDINO model overview" />
                 <h3>SemDINO: Foundation Prior‑Guided Cross‑Temporal Semantic Alignment Network</h3>
                 <p class="authors"><em><strong>Xinyu Tong</strong>, Meihua Zhou, Jinxiao Sun, Zaiyan Zhang, Hongruixuan Chen, Lei Wang</em></p>
                 <p class="venue">arXiv Preprint.</p>
@@ -457,7 +462,7 @@
               </article>
         
             <article class="research-card">
-              <img class="research-image" src="assets/img/CLoE.png" alt="CLoE model overview" />
+              <img class="image-wrap" src="assets/img/CLoE.png" alt="CLoE model overview" />
                 <h3>CLoE: Expert Consistency Learning for Robust Missing Modality Segmentation</h3>
                 <p class="authors"><em><strong>Xinyu Tong</strong>, Meihua Zhou, Bowu Fan, Haitao Li</em></p>
                 <p class="venue">arXiv Preprint.</p>
@@ -467,7 +472,7 @@
               </article>
 
             <article class="research-card">
-              <img class="research-image" src="assets/img/M4Fuse2.png" alt="M4Fuse model overview" />
+              <img class="image-wrap" src="assets/img/M4Fuse2.png" alt="M4Fuse model overview" />
                 <h3>M4Fuse: Lightweight State‑Space MoE with a Cross‑Scale Gating Bridge for Brain Tumor Segmentation</h3>
                 <p class="authors"><em>Meihua Zhou<sup>*</sup>, <strong>Xinyu Tong<sup>*</sup><sup>#</sup></strong>, Li Yang</em></p>
                 <p class="venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2026.</p>
@@ -478,7 +483,7 @@
               </article>
 
             <article class="research-card">
-              <img class="research-image" src="assets/img/DCL.png" alt="DCL-SE model overview" />
+              <img class="image-wrap" src="assets/img/DCL.png" alt="DCL-SE model overview" />
                 <h3>DCL‑SE: Dynamic Curriculum Learning for Spatiotemporal Encoding of Brain Imaging</h3>
                 <p class="authors"><em>Meihua Zhou<sup>*</sup>, <strong>Xinyu Tong<sup>*</sup><sup>#</sup></strong>, Jiarui Zhao, Min Cheng, Li Yang, Lei Tian, Nan Wan</em></p>
                 <p class="venue">Neural Network(NN), 2027.</p>
