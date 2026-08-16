@@ -186,27 +186,27 @@
     .research-card.no-image > :not(.research-image){grid-column:1}
 
     .research-card h3 {
-      margin: 0 0 6px 0;
+      margin: 0 0 8px 0; /* 标题下边距，统一值，修改这里控制全部间距 */
       font-size: 1.18rem;
       line-height: 1.45;
     }
     
     .research-card .authors {
-      margin: 0 0 4px 0;
+      margin: 0 0 8px 0; /* 作者下边距，和上面保持一样 */
       font-size: 0.95rem;
       line-height: 1.55;
       color: var(--muted);
     }
     
     .research-card .venue {
-      margin: 0 0 10px 0; 
+      margin: 0 0 8px 0; /* venue下边距，和上面保持一样 */
       font-size: 0.95rem;
       font-style: italic;
       color: var(--muted);
     }
     
     .research-buttons {
-      margin-top: 8px;
+      margin-top: 0; /* 清除按钮上边距，完全由venue的margin-bottom控制距离 */
     }
     
     .btn-link {
@@ -228,13 +228,13 @@
     }
     .research-image{
       grid-column:1;
+      align-self: center; /* ✅ grid原生垂直居中，替代原来写死margin‑top:40px */
       width:100%;
       min-height:0;
       object-fit:contain;
       background:#ffffff;
       border-radius:10px;
       border:1px solid var(--border);
-      margin-top: 40px; 
     }
     .research-card p:last-child{margin-bottom:0}
     @media(max-width:600px){
@@ -246,7 +246,7 @@
         height:auto;
         margin-bottom:18px
       }
-    } 
+    }
   </style>
 </head>
 <body id="top">
