@@ -178,76 +178,20 @@
 
     html{scroll-behavior:smooth}
 
-    /* 完全从research.html复制的研究卡片样式，不要修改 */
     .research-list{display:grid;gap:18px;width:100%}
-    .research-card{display:grid;grid-template-columns:minmax(200px,32%) minmax(0,1fr);column-gap:22px;align-items:center;padding:22px;border:1px solid var(--border);border-radius:var(--radius);background:var(--card);box-shadow:var(--shadow)}
+    .research-card{display:grid;grid-template-columns:minmax(200px,32%) minmax(0,1fr);column-gap:22px;align-items:start;padding:22px;border:1px solid var(--border);border-radius:var(--radius);background:var(--card);box-shadow:var(--shadow)}
     .research-card > :not(.research-image){grid-column:2}
     .research-card.no-image{grid-template-columns:1fr}
     .research-card.no-image > :not(.research-image){grid-column:1}
-    
-    .research-card h3 {
-      margin: 0 0 8px 0;
-      font-size: 1.18rem;
-      line-height: 1.45;
-    }
-    
-    .research-card .authors {
-      margin: 0 0 8px 0; /* ✅ margin-top强制为0，清除p标签浏览器默认上边距 */
-      font-size: 0.95rem;
-      line-height: 1.55;
-      color: var(--muted);
-    }
-    
-    .research-card .venue {
-      margin: 0 0 8px 0; /* ✅ margin-top强制为0 */
-      font-size: 0.95rem;
-      font-style: italic;
-      color: var(--muted);
-    }
-    
-    .research-buttons {
-      margin-top: 0;
-    }
-    
-    .btn-link {
-      display: inline-block;
-      border: 2px solid #8b4513;
-      color: #8b4513;
-      text-decoration: none;
-      padding: 3px 8px;
-      border-radius: 999px;
-      margin-right: 10px;
-      font-size: 0.9rem;
-      font-weight: 400;
-      line-height: 1.4;
-    }
-    
-    .btn-link:hover {
-      background-color: #8b4513;
-      color: #ffffff;
-    }
-    .research-image{
-      grid-column:1;
-      /* align-self: center; */
-      width:100%;
-      min-height:0;
-      object-fit:contain;
-      background:#ffffff;
-      border-radius:10px;
-      border:1px solid var(--border);
-      margin-top: 80px;
-    }
+    .research-image{grid-column:1;grid-row:1 / span 3;align-self:stretch;width:100%;height:100%;min-height:0;object-fit:contain;background:#ffffff;border-radius:10px;border:1px solid var(--border)}
     .research-card p:last-child{margin-bottom:0}
-    @media(max-width:600px){
-      .research-card{grid-template-columns:1fr}
-      .research-card > :not(.research-image){grid-column:1}
-      .research-image{
-        grid-column:1;
-        grid-row:auto;
-        height:auto;
-        margin-bottom:18px
-      }
+    footer{text-align:center;margin:32px 0}
+    @media(max-width:860px){
+      .menu-toggle{display:inline-flex}
+      .topnav{display:none;position:absolute;left:0;right:0;top:54px;padding:12px 20px;background:color-mix(in oklab,var(--bg) 92%,transparent);border-bottom:1px solid var(--border)}
+      .topnav.open{display:flex}
     }
+    @media(max-width:600px){.page{padding:20px 14px;margin-top:70px}.content-shell,.research-card{padding:16px}.research-card{grid-template-columns:1fr}.research-card > :not(.research-image){grid-column:1}.research-image{grid-column:1;grid-row:auto;height:auto;aspect-ratio:1 / 1;margin-bottom:18px}body{font-size:16px}}
   </style>
 </head>
 <body id="top">
@@ -443,63 +387,54 @@
 
 
 
-        <section id="research">
-          <h2>Selected Research</h2>
-          <div class="research-list">
-            
-            <article class="research-card">
-              <div class="research-image">
-                <img src="assets/img/SemDINO.png" alt="SemDINO model overview" />
-                </div>
-                <h3>SemDINO: Foundation Prior‑Guided Cross‑Temporal Semantic Alignment Network</h3>
-                <p class="authors"><em><strong>Xinyu Tong</strong>, Meihua Zhou, Jinxiao Sun, Zaiyan Zhang, Hongruixuan Chen, Lei Wang</em></p>
-                <p class="venue">arXiv Preprint.</p>
-                <div class="research-buttons">
-                  <a class="btn-link" href="https://arxiv.org/pdf/2606.09772">arxiv</a>
-                  <a class="btn-link" href="https://github.com/tonxycs/SemDINO">code and data</a>
-                </div>
-              </article>
+           <section id="research">
+            <h2>Selected Research</h2>
+            <div class="research-list">
+                
+                <article class="research-card">
+                    <img class="research-image" src="assets/img/SemDINO.png" alt="SemDINO model overview" onerror="this.hidden=true" />
+                    <h3>SemDINO: Foundation Prior‑Guided Cross‑Temporal Semantic Alignment Network</h3>
+                    <p class="authors"><em><strong>Xinyu Tong</strong>, Meihua Zhou, Jinxiao Sun, Zaiyan Zhang, Hongruixuan Chen, Lei Wang</em></p>
+                    <p class="venue">arXiv Preprint.</p>
+                    <div class="research-buttons">
+                        <a class="btn-link" href="https://arxiv.org/pdf/2606.09772">arxiv</a>
+                        <a class="btn-link" href="https://github.com/tonxycs/SemDINO">code and data</a>
+                    </div>
+                </article>
+          
+                <article class="research-card">
+                    <img class="research-image" src="assets/img/CLoE.png" alt="CLoE model overview" onerror="this.hidden=true" />
+                    <h3>CLoE: Expert Consistency Learning for Robust Missing Modality Segmentation</h3>
+                    <p class="authors"><em><strong>Xinyu Tong</strong>, Meihua Zhou, Bowu Fan, Haitao Li</em></p>
+                    <p class="venue">arXiv Preprint.</p>
+                    <div class="research-buttons">
+                        <a class="btn-link" href="https://arxiv.org/abs/2603.09316">arxiv</a>
+                    </div>
+                </article>
         
-            <article class="research-card">
-                <div class="research-image">
-                <img src="assets/img/CLoE.png" alt="CLoE model overview" />
-                </div>
-                <h3>CLoE: Expert Consistency Learning for Robust Missing Modality Segmentation</h3>
-                <p class="authors"><em><strong>Xinyu Tong</strong>, Meihua Zhou, Bowu Fan, Haitao Li</em></p>
-                <p class="venue">arXiv Preprint.</p>
-                <div class="research-buttons">
-                  <a class="btn-link" href="https://arxiv.org/abs/2603.09316">arxiv</a>
-                </div>
-              </article>
-
-            <article class="research-card">
-              <div class="research-image">
-                <img src="assets/img/M4Fuse2.png" alt="M4Fuse model overview" />
-                </div>
-                <h3>M4Fuse: Lightweight State‑Space MoE with a Cross‑Scale Gating Bridge for Brain Tumor Segmentation</h3>
-                <p class="authors"><em>Meihua Zhou<sup>*</sup>, <strong>Xinyu Tong<sup>*</sup><sup>#</sup></strong>, Li Yang</em></p>
-                <p class="venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2026.</p>
-                <div class="research-buttons">
-                  <a class="btn-link" href="https://arxiv.org/abs/2605.02444">paper</a>
-                  <a class="btn-link" href="https://github.com/tonxycs/M4Fuse">code and data</a>
-                </div>
-              </article>
-
-            <article class="research-card">
-              <div class="research-image">
-                <img src="assets/img/DCL.png" alt="DCL-SE model overview" />
-                </div>
-                <h3>DCL‑SE: Dynamic Curriculum Learning for Spatiotemporal Encoding of Brain Imaging</h3>
-                <p class="authors"><em>Meihua Zhou<sup>*</sup>, <strong>Xinyu Tong<sup>*</sup><sup>#</sup></strong>, Jiarui Zhao, Min Cheng, Li Yang, Lei Tian, Nan Wan</em></p>
-                <p class="venue">Neural Network(NN), 2027.</p>
-                <div class="research-buttons">
-                  <a class="btn-link" href="https://www.sciencedirect.com/science/article/pii/S0893608026008671">paper</a>
-                  <!-- <a class="btn-link" href="https://github.com/tonxycs/M4Fuse">code and data</a> -->
-                </div>
-              </article>        
-          </div>
+                <article class="research-card">
+                    <img class="research-image" src="assets/img/M4Fuse2.png" alt="M4Fuse model overview" onerror="this.hidden=true" />
+                    <h3>M4Fuse: Lightweight State‑Space MoE with a Cross‑Scale Gating Bridge for Brain Tumor Segmentation</h3>
+                    <p class="authors"><em>Meihua Zhou<sup>*</sup>, <strong>Xinyu Tong<sup>*</sup><sup>#</sup></strong>, Li Yang</em></p>
+                    <p class="venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2026.</p>
+                    <div class="research-buttons">
+                        <a class="btn-link" href="https://arxiv.org/abs/2605.02444">paper</a>
+                        <a class="btn-link" href="https://github.com/tonxycs/M4Fuse">code and data</a>
+                    </div>
+                </article>
+        
+                <article class="research-card">
+                    <img class="research-image" src="assets/img/DCL.png" alt="DCL-SE model overview" onerror="this.hidden=true" />
+                    <h3>DCL‑SE: Dynamic Curriculum Learning for Spatiotemporal Encoding of Brain Imaging</h3>
+                    <p class="authors"><em>Meihua Zhou<sup>*</sup>, <strong>Xinyu Tong<sup>*</sup><sup>#</sup></strong>, Jiarui Zhao, Min Cheng, Li Yang, Lei Tian, Nan Wan</em></p>
+                    <p class="venue">Neural Network(NN), 2027.</p>
+                    <div class="research-buttons">
+                        <a class="btn-link" href="https://www.sciencedirect.com/science/article/pii/S0893608026008671">paper</a>
+                        <!-- <a class="btn-link" href="https://github.com/tonxycs/M4Fuse">code and data</a> -->
+                    </div>
+                </article>        
+            </div>
         </section>
-
 
 
         
