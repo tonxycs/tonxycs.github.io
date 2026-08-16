@@ -199,7 +199,7 @@
     }
     
     .research-card .venue {
-      margin: 0;
+      margin: 0 0 10px 0; 
       font-size: 0.95rem;
       font-style: italic;
       color: var(--muted);
@@ -239,7 +239,7 @@
     .research-card p:last-child{margin-bottom:0}
     @media(max-width:600px){
       .research-card{grid-template-columns:1fr}
-      .research-card > :not(.research-image){grid-column:1}
+      /* .research-card > :not(.research-image){grid-column:1} */
       .research-image{
         grid-column:1;
         grid-row:auto;
