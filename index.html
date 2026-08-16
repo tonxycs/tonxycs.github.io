@@ -178,35 +178,35 @@
 
     html{scroll-behavior:smooth}
 
-/* 完全从research.html复制的研究卡片样式，不要修改 */
+    /* 完全从research.html复制的研究卡片样式，不要修改 */
     .research-list{display:grid;gap:18px;width:100%}
     .research-card{display:grid;grid-template-columns:minmax(200px,32%) minmax(0,1fr);column-gap:22px;align-items:center;padding:22px;border:1px solid var(--border);border-radius:var(--radius);background:var(--card);box-shadow:var(--shadow)}
     .research-card > :not(.research-image){grid-column:2}
     .research-card.no-image{grid-template-columns:1fr}
     .research-card.no-image > :not(.research-image){grid-column:1}
-
+    
     .research-card h3 {
-      margin: 0 0 8px 0; /* 标题下边距，统一值，修改这里控制全部间距 */
+      margin: 0 0 8px 0;
       font-size: 1.18rem;
       line-height: 1.45;
     }
     
     .research-card .authors {
-      margin: 0 0 8px 0; /* 作者下边距，和上面保持一样 */
+      margin: 0 0 8px 0; /* ✅ margin-top强制为0，清除p标签浏览器默认上边距 */
       font-size: 0.95rem;
       line-height: 1.55;
       color: var(--muted);
     }
     
     .research-card .venue {
-      margin: 0 0 8px 0; /* venue下边距，和上面保持一样 */
+      margin: 0 0 8px 0; /* ✅ margin-top强制为0 */
       font-size: 0.95rem;
       font-style: italic;
       color: var(--muted);
     }
     
     .research-buttons {
-      margin-top: 0; /* 清除按钮上边距，完全由venue的margin-bottom控制距离 */
+      margin-top: 0;
     }
     
     .btn-link {
@@ -228,7 +228,7 @@
     }
     .research-image{
       grid-column:1;
-      align-self: center; /* ✅ grid原生垂直居中，替代原来写死margin‑top:40px */
+      align-self: center;
       width:100%;
       min-height:0;
       object-fit:contain;
